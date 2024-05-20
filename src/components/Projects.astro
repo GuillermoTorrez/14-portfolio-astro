@@ -1,0 +1,152 @@
+---
+import GitHub from "./icons/Github.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Jquery from "./icons/Jquery.astro";
+import Link from "./icons/Link.astro";
+import React from "./icons/React.astro";
+import AstroIcon from "./icons/AstroIcon.astro"
+import LinkButton from "./LinkButton.astro";
+import Node from "./icons/Nodejs.astro"
+import D3 from "./icons/D3.astro"
+import Mongo from "./icons/Mongo.astro"
+import PostgreSQL from "./icons/PostgreSQL.astro"
+import MySQL from "./icons/Mysql.astro"
+
+const TAGS = {
+  NEXT: {
+    name: "Next.js",
+    class: "bg-black text-white",
+    icon: NextJS,
+  },
+  TAILWIND: {
+    name: "Tailwind",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+  JQUERY: {
+    name: "Jquery",
+    class: "bg-[#003159] text-white",
+    icon: Jquery,
+  },
+  REACT: {
+    name: "React",
+    class: "bg-[#003159] text-white",
+    icon: React,
+  },
+  ASTRO: {
+    name: "Astro",
+    class: "bg-[#003159] text-white",
+    icon: AstroIcon,
+  },
+  NODEJS: {
+    name: "NodeJs",
+    class: "bg-[#003159] text-white",
+    icon: Node,
+  },
+  D3: {
+    name: "D3",
+    class: "bg-[#003159] text-white",
+    icon: D3,
+  },
+  MONGO: {
+    name: "Mongo",
+    class: "bg-[#003159] text-white",
+    icon: Mongo,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-[#003159] text-white",
+    icon: PostgreSQL,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#003159] text-white",
+    icon: MySQL,
+  },
+};
+const PROJECTS = [
+  {
+    title: "Comprehensive Accounting System",
+    description:
+      "Automate and simplify financial tasks with tools for managing ledgers, generating reports, and bank reconciliation.",
+    link: "https://comprenhensive-accounting.app/",
+    github: "https://github.com/guillermo/50-account-react-jquery",
+    image: "/projects/accounting.webp",
+    tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.NODEJS, TAGS.POSTGRESQL]
+  },
+  {
+    title: "Interactive KPI Dashboard",
+    description:
+      "Visualize and monitor KPIs in real-time with dynamic charts, up-to-date data, and customized alerts.",
+    link: "https://Interactive-kpi-dashboard.app",
+    image: "/projects/adventjs.webp",
+    tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.NODEJS, TAGS.D3, TAGS.MONGO],
+  },
+  {
+    title: "Expense Budget",
+    description:
+      "Plan and track expenses with tools to set budgets, record expenses, and generate detailed reports.",
+    link: "https://expense-budget.app",
+    image: "/projects/adventjs.webp",
+    tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.NODEJS, TAGS.D3, TAGS.MYSQL],
+  },
+];
+---
+
+<div class="flex flex-col gap-y-16">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="Recently my dream"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
+    ))
+  }
+</div>
