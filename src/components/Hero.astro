@@ -1,18 +1,22 @@
 ---
+import { Image } from 'astro:assets';
 const personalImageAlt = "Guillermo Torrez";
 import Badge from "../components/Badge.astro";
 import LinkeindIcon from "../components/icons/Linkeind.astro";
 import SocialMedia from "../components/icons/SocialMedia.astro";
 import GitHubIcon from "../components/icons/Github.astro";
 import EmailIcon from "../components/icons/Email.astro";
+import Picture from '../../public/Guillermo.webp';
 ---
 
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
-    <img
-      class="rounded-full shadow-lg size-16"
-      src="/Guillermo.webp"
+
+    <Image
+      class="rounded-full shadow-lg size-20"
+      src={Picture}
       alt={personalImageAlt}
+      loading='eager'
     />
     <a
       href="https://linkedin.com/in/william-torres-822796307"

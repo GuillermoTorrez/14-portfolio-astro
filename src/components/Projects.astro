@@ -12,6 +12,10 @@ import D3 from "./icons/D3.astro"
 import Mongo from "./icons/Mongo.astro"
 import PostgreSQL from "./icons/PostgreSQL.astro"
 import MySQL from "./icons/Mysql.astro"
+import { Image } from 'astro:assets';
+import AccountImage from "../../public/projects/accounting.webp"
+import AdventJS from "../../public/projects/adventjs.webp"
+
 
 const TAGS = {
   NEXT: {
@@ -72,7 +76,7 @@ const PROJECTS = [
       "Automate and simplify financial tasks with tools for managing ledgers, generating reports, and bank reconciliation.",
     link: "https://comprenhensive-accounting.app/",
     github: "https://github.com/guillermo/50-account-react-jquery",
-    image: "/projects/accounting.webp",
+    image: AccountImage,
     tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.NODEJS, TAGS.POSTGRESQL]
   },
   {
@@ -80,7 +84,7 @@ const PROJECTS = [
     description:
       "Visualize and monitor KPIs in real-time with dynamic charts, up-to-date data, and customized alerts.",
     link: "https://Interactive-kpi-dashboard.app",
-    image: "/projects/adventjs.webp",
+    image: AdventJS,
     tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.NODEJS, TAGS.D3, TAGS.MONGO],
   },
   {
@@ -88,7 +92,7 @@ const PROJECTS = [
     description:
       "Plan and track expenses with tools to set budgets, record expenses, and generate detailed reports.",
     link: "https://expense-budget.app",
-    image: "/projects/adventjs.webp",
+    image: AdventJS,
     tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.NODEJS, TAGS.D3, TAGS.MYSQL],
   },
 ];
@@ -100,10 +104,10 @@ const PROJECTS = [
       <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
         <div class="w-full md:w-1/2">
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <img
+            <Image
               alt="Recently my dream"
               class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-              loading="lazy"
+              loading="eager"
               src={image}
             />
           </div>
