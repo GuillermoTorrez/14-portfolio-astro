@@ -29,12 +29,12 @@ const navItems = [
   class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
 >
   <nav
-    class="flex px-3 text-sm font-medium rounded-full text-gray-700 dark:text-gray-200 justify-center items-center"
+    class="flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center"
   >
     {
       navItems.map((link) => (
         <a
-          class="relative block px-2 py-2 transition dark:text-white-200 hover:text-yellow-500 dark:hover:text-yellow-300"
+          class="relative block px-3 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400 "
           aria-label={link.label}
           href={link.url}
         >
@@ -88,12 +88,25 @@ const navItems = [
   });
 </script>
 
+
+
 <style>
   nav {
     animation: nav-shadown 1s linear both;
     animation-timeline: scroll();
     animation-range: 0 100px;
+    flex-wrap: wrap;
   }
+
+  @media (max-width: 430px) {
+  header {
+    justify-content: flex-start; 
+   /* Align items to the left */
+  }
+  nav {
+    /* Additional styles for smaller screens, like font size or padding */
+  }
+}
 
   @keyframes nav-shadown {
     to {

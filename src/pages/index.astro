@@ -9,7 +9,7 @@ import AboutMe from "../components/AboutMe.astro";
 import CodeIcon from "../components/icons/Code.astro";
 import Hero from "../components/Hero.astro";
 import ContactIcon from "../components/icons/Contact.astro";
-import Contact from "../components/Contact.astro";
+import { ContactForm } from "../components/ContactForm";
 ---
 
 <Layout
@@ -62,7 +62,7 @@ import Contact from "../components/Contact.astro";
 
           Contact
         </h2>
-        <Contact />
+        <ContactForm client:visible/>
       </SectionContainer>
     </div>
   </div>

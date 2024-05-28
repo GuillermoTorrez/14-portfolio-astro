@@ -1,3 +1,14 @@
 {
+  "compilerOptions": {
+      "jsx": "react",
+      "lib": ["dom", "esnext"],
+      "module": "esnext",
+      "target": "esnext",
+      "strict": true,
+      "moduleResolution": "node",
+      "esModuleInterop": true,
+      "skipLibCheck": true
+    },
   "extends": "astro/tsconfigs/strict"
 }
+
