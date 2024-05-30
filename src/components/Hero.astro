@@ -1,22 +1,21 @@
 ---
-import { Image } from 'astro:assets';
+import { Image } from "astro:assets";
 const personalImageAlt = "Guillermo Torrez";
 import Badge from "../components/Badge.astro";
 import LinkeindIcon from "../components/icons/Linkeind.astro";
 import SocialMedia from "../components/icons/SocialMedia.astro";
 import GitHubIcon from "../components/icons/Github.astro";
 import EmailIcon from "../components/icons/Email.astro";
-import Picture from '../../public/Guillermo.webp';
+import Picture from "../../public/Guillermo.webp";
 ---
 
 <div class="max-w-xl">
   <div class="flex gap-4 mb-4">
-
     <Image
       class="rounded-full shadow-lg size-20"
       src={Picture}
       alt={personalImageAlt}
-      loading='eager'
+      loading="eager"
     />
     <a
       href="https://linkedin.com/in/william-torres-822796307"
@@ -28,14 +27,16 @@ import Picture from '../../public/Guillermo.webp';
     </a>
   </div>
 
-  <h1
-    class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
-  >
-    Hey, I am Guillermo Cano
-  </h1>
+  <div class="anim absolute">
+    <h1
+      class="anim-type text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+      data-text='[ "Hey, I am Guillermo Torrez", "I Love Coding", "I am Creative", "Extra Mile Mentality", "Strong Problem Solving" ]'
+    >
+    </h1>
+  </div>
 
   <p
-    class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    class="mt-20 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
   >
     Seven years of experience <strong
       >as a Web Developer, specializing in developing JavaScript applications.</strong
@@ -47,7 +48,7 @@ import Picture from '../../public/Guillermo.webp';
       <LinkeindIcon class="size-6 min-w-6 sm:min-w-5 md:min-w-4 lg:min-w-3" />
       Linkeind
     </SocialMedia>
-    
+
     <SocialMedia href="https://github.com/GuillermoTorrez">
       <GitHubIcon class="size-6 min-w-6 sm:min-w-5 md:min-w-4 lg:min-w-3" />
       GitHub
@@ -59,3 +60,5 @@ import Picture from '../../public/Guillermo.webp';
     </SocialMedia>
   </nav>
 </div>
+
+<script src="/src/layouts/Typewriter.js"></script>

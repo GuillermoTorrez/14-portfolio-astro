@@ -22,21 +22,24 @@ const { title, description } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width" />
-    
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <script
+      is:inline
+      defer
+      data-domain="guillermo-torrez.dev"
+      src="https://plausible.io/js/script.js"></script>
     <title>{title}</title>
   </head>
 
   <body class="relative text-black dark:text-white">
     <div
-    class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
+      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-50 dark:bg-gray-950
     bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(217,216,255,0.5),rgba(255,255,255,0.9))]
     dark:bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
     >
     </div>
-    
-    
     <Header />
     <slot />
     <Footer />
@@ -88,6 +91,28 @@ const { title, description } = Astro.props;
           background-color: rgb(229, 229, 229);
           border-radius: 9999px;
         }
+      }
+
+      /* Animations */
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      .anim::before {
+        position: relative;
+      }
+
+      .anim::after {
+        position: relative;
+        animation: blink 800ms infinite;
+        background-color: #535353;
+        content: "";
+        height: 100%;
+        left: 100%;
+        top: 0;
+        width: 4px;
       }
 
       @media (prefers-color-scheme: dark) {
