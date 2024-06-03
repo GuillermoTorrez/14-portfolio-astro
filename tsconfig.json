@@ -7,7 +7,7 @@
       "strict": true,
       "moduleResolution": "node",
       "esModuleInterop": true,
-      "skipLibCheck": true
+      "skipLibCheck": true,
     },
   "extends": "astro/tsconfigs/strict"
 }
