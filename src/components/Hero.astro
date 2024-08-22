@@ -16,13 +16,13 @@ import Picture from '../../public/me.webp'
     <!-- Imagen de fondo -->
 
     <div
-      class='absolute w-40 h-40 sm:w-80 sm:h-80 bg-gray-500 rounded-bl-[15%] top-5 left-5 z-40'
+      class='absolute w-40 h-40 sm:w-80 sm:h-80 bg-gray-500 rounded-bl-[15%] top-5 left-5 z-[0]'
     >
     </div>
 
     <!-- Imagen principal -->
     <Image
-      class='object-cover w-40 h-40 sm:w-80 sm:h-80 rounded-bl-[15%] rounded-tl-[15%] relative z-50'
+      class='object-cover w-40 h-40 sm:w-80 sm:h-80 rounded-bl-[15%] rounded-tl-[15%] relative z-[1]'
       src={Picture}
       alt={personalImageAlt}
       loading='eager'
@@ -33,7 +33,7 @@ import Picture from '../../public/me.webp'
       href='https://linkedin.com/in/william-torres-822796307'
       target='_blank'
       rel='noopener'
-      class='transition hover:scale-110 absolute z-[100]'
+      class='transition hover:scale-110 absolute z-[2]'
       style='top: 2px; left: 75px; transform: rotate(90deg) display:inline-block;'
     >
       <Badge class='max-w-[200px] text-center'>
