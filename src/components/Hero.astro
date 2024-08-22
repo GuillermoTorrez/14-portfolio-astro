@@ -1,66 +1,87 @@
 ---
-import { Image } from "astro:assets";
-const personalImageAlt = "Guillermo Torrez";
-import Badge from "../components/Badge.astro";
-import LinkeindIcon from "../components/icons/Linkeind.astro";
-import SocialMedia from "../components/icons/SocialMedia.astro";
-import GitHubIcon from "../components/icons/Github.astro";
-import EmailIcon from "../components/icons/Email.astro";
-import Picture from "../../public/me.webp";
+import { Image } from 'astro:assets'
+const personalImageAlt = 'Guillermo Torrez'
+import Badge from '../components/Badge.astro'
+import LinkeindIcon from '../components/icons/Linkeind.astro'
+import SocialMedia from '../components/icons/SocialMedia.astro'
+import GitHubIcon from '../components/icons/Github.astro'
+import EmailIcon from '../components/icons/Email.astro'
+import Picture from '../../public/me.webp'
 ---
 
-<div class="max-w-xl">
-  <div class="flex gap-4 mb-4">
+<div class='flex flex-col items-center sm:items-start flex-1 mb-10'>
+  <!-- Badge superpuesto -->
+
+  <div class='relative mb-5'>
+    <!-- Imagen de fondo -->
+
+    <div
+      class='absolute w-40 h-40 sm:w-80 sm:h-80 bg-gray-500 rounded-bl-[15%] top-5 left-5 z-40'
+    >
+    </div>
+
+    <!-- Imagen principal -->
     <Image
-      class="object-cover rounded-full shadow-lg size-40"
+      class='object-cover w-40 h-40 sm:w-80 sm:h-80 rounded-bl-[15%] rounded-tl-[15%] relative z-50'
       src={Picture}
       alt={personalImageAlt}
-      loading="eager"
+      loading='eager'
     />
+
+    <!-- Badge superpuesto sobre la imagen -->
     <a
-      href="https://linkedin.com/in/william-torres-822796307"
-      target="_blank"
-      rel="noopener"
-      class="flex items-center transition md:justify-center md:hover:scale-105"
+      href='https://linkedin.com/in/william-torres-822796307'
+      target='_blank'
+      rel='noopener'
+      class='transition hover:scale-110 absolute z-[100]'
+      style='top: 2px; left: 75px; transform: rotate(90deg) display:inline-block;'
     >
-      <Badge>Available to work remotely</Badge>
+      <Badge class='max-w-[200px] text-center'>
+        Available to work remotely
+      </Badge>
     </a>
   </div>
 
-  <div class="anim absolute h-[500px]">
-    <h1
-    class="anim-type sm:text-6xl text-4xl mt-sm-0 mb-sm-0 mt-lg-2 mb-lg-2 font-bold tracking-tight text-gray-800  dark:text-white leading-tight"
-      data-text='[ "Hey, I am Guillermo", "I Love Coding", "I am Creative", "Extra Mile Mentality", "Strong Problem Solving" ]'
+  <div class='max-w-xl mt-10 mx-auto sm:mx-0'>
+    <div class='anim absolute h-[500px]'>
+      <h1
+        class='anim-type text-2xl sm:text-6xl lg:text-6xl mt-0 mb-0 font-bold tracking-tight text-gray-800 dark:text-white leading-tight'
+        data-text='[ "Welcome to my Portfolio!", "Hi There! Guillermo Here!",  "I Love Coding", "I am Creative", "Extra Mile Mentality", "Strong Problem Solving" ]'
+      >
+      </h1>
+    </div>
+
+    <p
+      class='mt-10 sm:mt-20 mb-2 text-base sm:text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300'
     >
-    </h1>
+      Seven years of experience <strong
+        >as a Web Developer, specializing in developing JavaScript applications.</strong
+      >
+    </p>
+
+    <nav class='flex justify-left gap-3 flex-wrap mt-3'>
+      <SocialMedia href='https://linkedin.com/in/william-torres-822796307'>
+        <LinkeindIcon
+          class='m-1 size-6 min-w-6 sm:min-w-5 md:min-w-4 lg:min-w-3'
+        />
+        Linkeind
+      </SocialMedia>
+
+      <SocialMedia href='https://github.com/GuillermoTorrez'>
+        <GitHubIcon
+          class='m-1 size-6 min-w-6 sm:min-w-5 md:min-w-4 lg:min-w-3'
+        />
+        GitHub
+      </SocialMedia>
+
+      <SocialMedia href='mailto:guillermo.torrez@gmail.com'>
+        <EmailIcon
+          class='m-1 size-6 min-w-6 sm:min-w-5 md:min-w-4 lg:min-w-3'
+        />
+        guillermo.torrez@gmail.com
+      </SocialMedia>
+    </nav>
   </div>
 
-  <div class="flex">
-  <p
-    class="mt-20 mb-2 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-  >
-    Seven years of experience <strong
-      >as a Web Developer, specializing in developing JavaScript applications.</strong
-    >
-  </p>
-  </div>
-
-  <nav class="flex justify-left gap-3 flex-wrap mt-3">
-    <SocialMedia href="https://linkedin.com/in/william-torres-822796307">
-      <LinkeindIcon class="m-1 size-6 min-w-6 sm:min-w-5 md:min-w-4 lg:min-w-3" />
-      Linkeind
-    </SocialMedia>
-
-    <SocialMedia href="https://github.com/GuillermoTorrez">
-      <GitHubIcon class=" m-1 size-6 min-w-6 sm:min-w-5 md:min-w-4 lg:min-w-3" />
-      GitHub
-    </SocialMedia>
-
-    <SocialMedia href="mailto:guillermo.torrez@gmail.com">
-      <EmailIcon class="m-1 size-6 min-w-6 sm:min-w-5 md:min-w-4 lg:min-w-3" />
-      guillermo.torrez@gmail.com
-    </SocialMedia>
-  </nav>
+  <script src='/src/layouts/Typewriter.js'></script>
 </div>
-
-<script src="/src/layouts/Typewriter.js"></script>

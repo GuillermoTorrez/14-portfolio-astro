@@ -1,38 +1,53 @@
 ---
-import ThemeToggle from "./ThemeToggle.astro";
+import ThemeToggle from './ThemeToggle.astro'
+import { Image } from 'astro:assets'
+import Logo from '../../public/LOGOGT.svg'
+
 
 const navItems = [
   {
-    title: "Experience",
-    label: "experience",
-    url: "/#experience",
+    title: 'Experience',
+    label: 'experience',
+    url: '/#experience',
   },
   {
-    title: "Proyects",
-    label: "proyects",
-    url: "/#proyects",
+    title: 'Proyects',
+    label: 'proyects',
+    url: '/#proyects',
   },
   {
-    title: "About me",
-    label: "about me",
-    url: "/#about-me",
+    title: 'About me',
+    label: 'about me',
+    url: '/#about-me',
   },
   {
-    title: "Contact",
-    label: "contact",
-    url: "/#contact",
+    title: 'Contact',
+    label: 'contact',
+    url: '/#contact',
   },
-];
+]
 ---
 
+<div class='mx-auto mt-5 mr-5 ml-10 fixed flex flex-row items-center'>
+  <Image
+    class='object-cover size-6 sm:size-12'
+    src={Logo}
+    alt='PORTFOLIO LOGO'
+    loading='eager'   
+  />
+  <span class="ml-2 text-sm lg:text-lg font-medium  text-gray-600 dark:text-gray-200">Guillermo's Portfolio </span>
+</div>
+
 <header
-  class="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2"
+  class='fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-5 mr-5 '
 >
-<nav class="flex px-3 text-sm lg:text-lg font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center">
+  <nav
+    class='flex px-5 text-sm lg:text-lg font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center'
+  >
     {
       navItems.map((link) => (
         <a
-          class="relative block px-3 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400 "
+          class='relative block px-3 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400 '
           aria-label={link.label}
           href={link.url}
         >
@@ -45,48 +60,46 @@ const navItems = [
 </header>
 
 <script>
-  document.addEventListener("astro:page-load", () => {
-    const sections = document.querySelectorAll("section");
-    const navItems = document.querySelectorAll("header nav a");
+  document.addEventListener('astro:page-load', () => {
+    const sections = document.querySelectorAll('section')
+    const navItems = document.querySelectorAll('header nav a')
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
-            if (item.getAttribute("aria-label") == entry.target.id) {
-              item.classList.add("text-yellow-500");
+            if (item.getAttribute('aria-label') == entry.target.id) {
+              item.classList.add('text-yellow-500')
             } else {
-              item.classList.remove("text-yellow-500");
+              item.classList.remove('text-yellow-500')
             }
-          });
+          })
         }
-      });
-    };
+      })
+    }
 
     const observer = new IntersectionObserver(callback, {
       root: null,
-      rootMargin: "0px",
+      rootMargin: '0px',
       threshold: 0.3,
-    });
+    })
 
     sections.forEach((section) => {
-      observer.observe(section);
-    });
+      observer.observe(section)
+    })
 
     // Cleanup function
     document.onvisibilitychange = () => {
-      if (document.visibilityState === "hidden") {
-        observer.disconnect();
+      if (document.visibilityState === 'hidden') {
+        observer.disconnect()
       } else {
         sections.forEach((section) => {
-          observer.observe(section);
-        });
+          observer.observe(section)
+        })
       }
-    };
-  });
+    }
+  })
 </script>
-
-
 
 <style>
   nav {
@@ -97,14 +110,14 @@ const navItems = [
   }
 
   @media (max-width: 430px) {
-  header {
-    justify-content: flex-start; 
-   /* Align items to the left */
+    header {
+      justify-content: flex-start;
+      /* Align items to the left */
+    }
+    nav {
+      /* Additional styles for smaller screens, like font size or padding */
+    }
   }
-  nav {
-    /* Additional styles for smaller screens, like font size or padding */
-  }
-}
 
   @keyframes nav-shadown {
     to {
