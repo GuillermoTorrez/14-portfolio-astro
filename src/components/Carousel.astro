@@ -16,11 +16,14 @@ const { images, efect } = Astro.props
         <div
           class={`hidden ${efect}`}
           data-carousel-item={index === 0 ? 'active' : ''}
-        >
-          <img
-            src={imgSrc}
+        > {imgSrc}
+          <Image
             class='absolute block w-full h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2'
+            src={imgSrc}
+            width={254}
+            height={254}
             alt={`Imagen ${index + 1}`}
+            loading='eager'
           />
         </div>
       ))

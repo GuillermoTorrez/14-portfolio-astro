@@ -12,8 +12,25 @@ import D3 from "./icons/D3.astro"
 import Mongo from "./icons/Mongo.astro"
 import PostgreSQL from "./icons/PostgreSQL.astro"
 import MySQL from "./icons/Mysql.astro"
-import AccountImage from "../../public/projects/accounting.webp"
-import AdventJS from "../../public/projects/adventjs.webp"
+
+const AccountImage  = "/public/projects/accounting.webp"
+const AccountImage1 = "/public/projects/accounting.webp"
+const AccountImage2 = "/public/projects/accounting.webp"
+const AccountImage3 = "/public/projects/accounting.webp"
+const AccountImage4 = "/public/projects/accounting.webp"
+const AccountImage5 = "/public/projects/accounting.webp"
+const AccountImage6 = "/public/projects/accounting.webp"
+const AccountImage7 = "/public/projects/accounting.webp"
+
+
+const AdventJS  = "/public/projects/adventjs.webp"
+const AdventJS1 = "/public/projects/adventjs.webp"
+const AdventJS2 = "/public/projects/adventjs.webp"
+const AdventJS3 = "/public/projects/adventjs.webp"
+const AdventJS4 = "/public/projects/adventjs.webp"
+const AdventJS5 = "/public/projects/adventjs.webp"
+
+
 import Caruosel from '../components/Carousel.astro'
 
 
@@ -77,7 +94,7 @@ const PROJECTS = [
       "Automate and simplify financial tasks with tools for managing ledgers, generating reports, and bank reconciliation.",
     link: "https://comprenhensive-accounting.app/",
     github: "https://github.com/guillermo/50-account-react-jquery",
-    images: [AdventJS, AccountImage, AdventJS, AccountImage,AdventJS, AccountImage, AdventJS ],
+    images: [AdventJS, AccountImage, AdventJS1, AccountImage1, AdventJS2, AccountImage2, AdventJS3 ],
     tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.NODEJS, TAGS.POSTGRESQL],
     efect: 'transition-all duration-[700ms] ease-in-out',
   },
@@ -86,7 +103,7 @@ const PROJECTS = [
     description:
       "Visualize and monitor KPIs in real-time with dynamic charts, up-to-date data, and customized alerts.",
     link: "https://Interactive-kpi-dashboard.app",
-    images: [AccountImage, AdventJS, AccountImage, AdventJS, AccountImage, AccountImage],
+    images: [AccountImage4, AdventJS4, AccountImage5, AdventJS5, AccountImage6, AccountImage7],
     tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.NODEJS, TAGS.D3, TAGS.MONGO],
     efect: 'transition-all duration-[1000ms] ease'
   },
@@ -95,7 +112,7 @@ const PROJECTS = [
     description:
       "Plan and track expenses with tools to set budgets, record expenses, and generate detailed reports.",
     link: "https://expense-budget.app",
-    images: [AdventJS, AccountImage, AdventJS, AccountImage ],
+    images: [AdventJS, AccountImage1, AdventJS2, AccountImage3 ],
     tags: [TAGS.TAILWIND, TAGS.REACT, TAGS.NODEJS, TAGS.D3, TAGS.MYSQL],
     efect: 'transition-all duration-[1500ms] ease-out'
   },
@@ -109,7 +126,7 @@ const PROJECTS = [
         <div class="w-full md:w-1/2">
 
           <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-            <Caruosel images={images.map((image) => image.src) } efect={efect} 
+            <Caruosel images={images}  efect={efect} 
            />
           </div>
         </div>
